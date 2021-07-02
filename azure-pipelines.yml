@@ -15,6 +15,7 @@ variables:
 steps:
 
 # docker build
+# docker task Doc: https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops
 - task: Docker@2
   displayName: Build the hello-world docker image
   inputs:
