@@ -20,7 +20,9 @@ steps:
   inputs:
     command: build
     Dockerfile: **/Dockerfile
-    
+
+# Deploy image on AWS: https://www.youtube.com/watch?v=zt4T_mLgqAo&ab_channel=cloudopian
+
 # dotnet restore: https://docs.microsoft.com/en-us/azure/devops/pipelines/packages/nuget-restore?view=azure-devops
 # - task: DotNetCoreCLI@2
 #   inputs:
