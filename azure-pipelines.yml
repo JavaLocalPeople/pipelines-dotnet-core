@@ -32,11 +32,11 @@ steps:
 #     vstsFeed: 'my-vsts-feed' # A series of numbers and letters
 
 # dotnet build
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: 'build'
-#     arguments: '--configuration $(buildConfiguration)'
-#   displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
+  displayName: 'dotnet build $(buildConfiguration)'
 
 # dotnet publish
 # - task: DotNetCoreCLI@2
