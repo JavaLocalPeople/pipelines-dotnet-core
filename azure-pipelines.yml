@@ -13,11 +13,13 @@ variables:
   - group: jack-dev
   - name: buildConfiguration
     value: 'Release'
-
+  - name: AWS_REPO_NAME
+    value: $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(AWS_REPO_SUBNAME)
+    
 steps:
 
 - script: |
-    aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin public.ecr.aws/n0o6u4w4/jackrepo
+    aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com
   displayName: 'Login to AWS'
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
