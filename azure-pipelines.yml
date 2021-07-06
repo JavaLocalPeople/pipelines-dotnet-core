@@ -10,9 +10,18 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  buildConfiguration: 'Release'
+  - group: jack-dev
+  - name: buildConfiguration
+    value: 'Release'
 
 steps:
+
+- script: |
+    aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin public.ecr.aws/n0o6u4w4/jackrepo
+  displayName: 'Login to AWS'
+  env:
+    AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+    AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
 
 # docker build
 # docker task Doc: https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops
