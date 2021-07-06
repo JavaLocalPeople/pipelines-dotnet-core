@@ -16,11 +16,11 @@ steps:
 
 # docker build
 # docker task Doc: https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops
-- task: Docker@2
-  displayName: Build the hello-world docker image
-  inputs:
-    command: build
-    Dockerfile: **/Dockerfile
+# - task: Docker@2
+#   displayName: Build the hello-world docker image
+#   inputs:
+#     command: build
+#     Dockerfile: **/Dockerfile
 
 # Deploy image on AWS: https://www.youtube.com/watch?v=zt4T_mLgqAo&ab_channel=cloudopian
 
